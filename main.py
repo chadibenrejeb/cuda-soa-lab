@@ -12,11 +12,10 @@ from prometheus_client import CollectorRegistry, Gauge, generate_latest
 
 app = FastAPI()
 
-# Port config: Set via env STUDENT_PORT, default 8001
 STUDENT_PORT = int(os.environ.get("STUDENT_PORT", "8009"))
 
 @app.get("/health")
-async def health():
+async def health(): 
     return {"status": "ok"}
 
 @app.post("/add")
